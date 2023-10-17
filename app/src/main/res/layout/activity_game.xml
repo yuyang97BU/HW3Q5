@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/game01"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gameLostTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="-0"
+        android:text="@string/you_lost"
+        android:textColor="#BB4444"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/gameWonTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="-0"
+        android:text="@string/you_won"
+        android:textColor="#44BB44"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/wordTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:letterSpacing="0.3"
+        android:textSize="26sp"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        tools:text="_ _ ABCD_ _ _ _ _ _ _" />
+
+    <TextView
+        android:id="@+id/lettersUsedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/wordTextView"
+        tools:text="Used Letters:" />
+
+    <Button
+        android:id="@+id/newGameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Start New Game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/hintButton"
+        app:layout_constraintTop_toBottomOf="@id/lettersUsedTextView" />
+
+    <Button
+        android:id="@+id/hintButton"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="336dp"
+        android:layout_marginTop="64dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toLeftOf="@id/newGameButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lettersUsedTextView" />
+
+    <TextView
+        android:id="@+id/chooseALetterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="24dp"
+        android:text="CHOOSE A LETTER"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newGameButton"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lettersLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chooseALetterTextView">
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            app:constraint_referenced_ids="a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z"
+            app:flow_wrapMode="chain"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/a"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="A"
+            tools:layout_editor_absoluteY="36dp" />
+
+        <TextView
+            android:id="@+id/b"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="B"
+            app:layout_constraintBottom_toBottomOf="@+id/a"
+            app:layout_constraintStart_toEndOf="@+id/a"
+            app:layout_constraintTop_toTopOf="@+id/a" />
+
+        <TextView
+            android:id="@+id/c"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="C"
+            app:layout_constraintBottom_toBottomOf="@+id/b"
+            app:layout_constraintStart_toEndOf="@+id/b"
+            app:layout_constraintTop_toTopOf="@+id/b" />
+
+        <TextView
+            android:id="@+id/d"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="D"
+            app:layout_constraintBottom_toBottomOf="@+id/c"
+            app:layout_constraintStart_toEndOf="@+id/c"
+            app:layout_constraintTop_toTopOf="@+id/c" />
+
+        <TextView
+            android:id="@+id/e"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="E"
+            app:layout_constraintBottom_toBottomOf="@+id/d"
+            app:layout_constraintStart_toEndOf="@+id/d"
+            app:layout_constraintTop_toTopOf="@+id/d" />
+
+        <TextView
+            android:id="@+id/f"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="F"
+            app:layout_constraintBottom_toBottomOf="@+id/e"
+            app:layout_constraintStart_toEndOf="@+id/e"
+            app:layout_constraintTop_toTopOf="@+id/e" />
+
+        <TextView
+            android:id="@+id/g"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="G"
+            app:layout_constraintBottom_toBottomOf="@+id/f"
+            app:layout_constraintStart_toEndOf="@+id/f"
+            app:layout_constraintTop_toTopOf="@+id/f" />
+
+        <TextView
+            android:id="@+id/h"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="H"
+            app:layout_constraintBottom_toBottomOf="@+id/g"
+            app:layout_constraintStart_toEndOf="@+id/g"
+            app:layout_constraintTop_toTopOf="@+id/g" />
+
+        <TextView
+            android:id="@+id/i"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="I"
+            app:layout_constraintBottom_toBottomOf="@+id/h"
+            app:layout_constraintStart_toEndOf="@+id/h"
+            app:layout_constraintTop_toTopOf="@+id/h" />
+
+        <TextView
+            android:id="@+id/j"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="J"
+            app:layout_constraintBottom_toBottomOf="@+id/i"
+            app:layout_constraintStart_toEndOf="@+id/i"
+            app:layout_constraintTop_toTopOf="@+id/i" />
+
+        <TextView
+            android:id="@+id/k"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="K"
+            app:layout_constraintBottom_toBottomOf="@+id/j"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/j"
+            app:layout_constraintTop_toTopOf="@+id/j" />
+
+        <TextView
+            android:id="@+id/l"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="L"
+            app:layout_constraintBottom_toBottomOf="@+id/m"
+            app:layout_constraintStart_toStartOf="@+id/flow"
+            app:layout_constraintTop_toTopOf="@+id/m" />
+
+        <TextView
+            android:id="@+id/m"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="M"
+            app:layout_constraintBottom_toBottomOf="@+id/n"
+            app:layout_constraintStart_toEndOf="@+id/l"
+            app:layout_constraintTop_toTopOf="@+id/n" />
+
+        <TextView
+            android:id="@+id/n"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="N"
+            app:layout_constraintBottom_toBottomOf="@+id/o"
+            app:layout_constraintStart_toEndOf="@+id/m"
+            app:layout_constraintTop_toTopOf="@+id/o" />
+
+        <TextView
+            android:id="@+id/o"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="O"
+            app:layout_constraintBottom_toBottomOf="@+id/p"
+            app:layout_constraintStart_toEndOf="@+id/n"
+            app:layout_constraintTop_toTopOf="@+id/p" />
+
+        <TextView
+            android:id="@+id/p"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="P"
+            app:layout_constraintBottom_toBottomOf="@+id/q"
+            app:layout_constraintStart_toEndOf="@+id/o"
+            app:layout_constraintTop_toTopOf="@+id/q" />
+
+        <TextView
+            android:id="@+id/q"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="Q"
+            app:layout_constraintBottom_toBottomOf="@+id/r"
+            app:layout_constraintStart_toEndOf="@+id/p"
+            app:layout_constraintTop_toTopOf="@+id/r" />
+
+        <TextView
+            android:id="@+id/r"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="R"
+            app:layout_constraintBottom_toBottomOf="@+id/s"
+            app:layout_constraintStart_toEndOf="@+id/q"
+            app:layout_constraintTop_toTopOf="@+id/s" />
+
+        <TextView
+            android:id="@+id/s"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="S"
+            app:layout_constraintBottom_toBottomOf="@+id/t"
+            app:layout_constraintStart_toEndOf="@+id/r"
+            app:layout_constraintTop_toTopOf="@+id/t" />
+
+        <TextView
+            android:id="@+id/t"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="T"
+            app:layout_constraintBottom_toBottomOf="@+id/u"
+            app:layout_constraintStart_toEndOf="@+id/s"
+            app:layout_constraintTop_toTopOf="@+id/u" />
+
+        <TextView
+            android:id="@+id/u"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="U"
+            app:layout_constraintBottom_toBottomOf="@+id/v"
+            app:layout_constraintEnd_toEndOf="@+id/flow" />
+
+        <TextView
+            android:id="@+id/v"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="V"
+            app:layout_constraintBottom_toBottomOf="@+id/w"
+            app:layout_constraintEnd_toStartOf="@+id/flow"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/w"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="W"
+            app:layout_constraintBottom_toBottomOf="@+id/v"
+            app:layout_constraintEnd_toStartOf="@+id/x"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/v"
+            app:layout_constraintTop_toTopOf="@+id/v" />
+
+        <TextView
+            android:id="@+id/x"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="X"
+            app:layout_constraintBottom_toBottomOf="@+id/w"
+            app:layout_constraintEnd_toStartOf="@+id/y"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/w"
+            app:layout_constraintTop_toTopOf="@+id/w" />
+
+        <TextView
+            android:id="@+id/y"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="Y"
+            app:layout_constraintBottom_toBottomOf="@+id/x"
+            app:layout_constraintEnd_toStartOf="@+id/flow"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/x"
+            app:layout_constraintTop_toTopOf="@+id/x" />
+
+        <TextView
+            android:id="@+id/z"
+            style="@style/letterButton"
+            android:background="@color/red"
+            android:text="Z"
+            app:layout_constraintBottom_toBottomOf="@+id/y"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/flow"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/flow"
+            app:layout_constraintTop_toTopOf="@+id/y" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

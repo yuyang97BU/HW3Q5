@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hangman Game</string>
+    <string name="you_won">You Hecking Won!</string>
+    <string name="you_lost">It\'s Over, You Lost!</string>
+</resources>
