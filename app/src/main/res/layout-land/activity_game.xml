@@ -74,8 +74,8 @@
 
     <Button
         android:id="@+id/newGameButton"
-        android:layout_width="309dp"
-        android:layout_height="111dp"
+        android:layout_width="300dp"
+        android:layout_height="56dp"
         android:layout_marginTop="8dp"
         android:text="Start New Game"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,8 +85,8 @@
 
     <Button
         android:id="@+id/hintButton"
-        android:layout_width="199dp"
-        android:layout_height="109dp"
+        android:layout_width="203dp"
+        android:layout_height="56dp"
         android:layout_marginStart="132dp"
         android:layout_marginTop="8dp"
         android:text="Hint"
